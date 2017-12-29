@@ -1,0 +1,7 @@
+{
+  "name": "reflecto-ui",
+  "version": "0.1.0",
+  "repository": "git@github.com:krambuhl/reflecto.git",
+  "author": "Evan Krambuhl <thekrambuhl@gmail.com>",
+  "license": "MIT"
+}
