@@ -1,0 +1,12 @@
+{
+  "name": "reflecto-vue",
+  "version": "0.1.0",
+  "repository": "git@github.com:krambuhl/reflecto.git",
+  "author": "Evan Krambuhl <thekrambuhl@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.findindex": "^4.6.0",
+    "vue": "^2.5.13",
+    "webpack": "^3.10.0"
+  }
+}
