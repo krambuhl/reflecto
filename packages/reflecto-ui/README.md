@@ -2,12 +2,12 @@
 
 Contains vue components for the reflecto application.
 
-- shell-header
-- shell-footer
-- selector
-- prop
-- demo
-- code
+- ShellHeader
+- ShellFooter
+- Selector
+- Prop
+- Demo
+- Code
 
 ## How to install
 
