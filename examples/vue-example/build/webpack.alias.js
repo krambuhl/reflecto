@@ -6,9 +6,9 @@ module.exports = {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       '@shared': source('@shared'),
-      '@identity': source('elements/identity'),
-      '@tags': source('elements/tags'),
-      '@components': source('elements/components'),
+      '@identity': source('identity'),
+      '@tags': source('tags'),
+      '@components': source('components'),
       '@pages': source('pages')
     }
   }
