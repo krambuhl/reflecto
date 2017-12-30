@@ -1,5 +1,15 @@
 const findIndex = require('lodash.findindex')
 
+// make an object from a webpack context
+// with filenames as key and default export as value
+const requireAll = context =>
+  context.keys()
+    .reduce((list, path) => {
+      const module = context(path)
+      list[path.substr(2)] = module
+      return list
+    }, {})
+
 const getFile = (files, path) => {
   const contents = files[path].default || files[path]
   const directory = path.substr(0, path.lastIndexOf('/'))
@@ -49,7 +59,13 @@ const groupCollections = (list, file, _, fileList) => {
 }
 
 // transforms an file object into an array
-module.exports = (files) =>
-  Object.keys(files)
-    .map(path => getFile(files, path))
+module.exports = context => {
+  const contextList = Array.isArray(context) ? context : [context]
+  const fileList = contextList
+    .map(requireAll)
+    .reduce((all, modules) => Object.assign(all, modules))
+
+  return Object.keys(fileList)
+    .map(path => getFile(fileList, path))
     .reduce(groupCollections, [])
+}
